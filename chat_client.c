@@ -5,11 +5,11 @@
 #include <sys/ioctl.h>
 #include <assert.h>
 
+#define Chat_Room_DEBUG
 /* 
- * Use DEBUG_DISPLAY to show debugging info to a specific window
- * Use DISPLAY to show routine info to a specific window
+ * Use DEBUG_PRINT to print debugging info
  */
-#ifdef CSIS0234_COMP3234_DEBUG
+#ifdef Chat_Room_DEBUG
 #define DEBUG_DISPLAY(screen, _f, _a...) \
     do { \
         wprintw(screen, "[debug]<%s> " _f "\n", __func__, ## _a);\
