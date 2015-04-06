@@ -19,7 +19,11 @@ static char banner[] =
  * Debug option 
  * In case you do not need debug information, just comment out it.
  */
-
+#define Chat_Room_DEBUG
+/* 
+ * Use DEBUG_PRINT to print debugging info
+ */
+#ifdef Chat_Room_DEBUG
 #define DEBUG_PRINT(_f, _a...) \
     do { \
         printf("[debug]<%s> " _f "\n", __func__, ## _a); \
