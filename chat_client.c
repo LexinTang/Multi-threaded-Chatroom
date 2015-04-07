@@ -120,7 +120,7 @@ void *chat_thread_fn(void *arg)
     struct exchg_msg mbuf;					//message buffer
     int instuction;
 
-    DEBUG_DISPLAY(mywin, "Listen thread started");
+    //DEBUG_DISPLAY(mywin, "Listen thread started");
 
     // listen to broadcast message until user quits
     while (1) {
@@ -130,7 +130,7 @@ void *chat_thread_fn(void *arg)
             exit(0);
         }
  
-        DEBUG_DISPLAY(mywin, "Listen thread: message received (%d)", ntohl(mbuf.instruction));
+        //DEBUG_DISPLAY(mywin, "Listen thread: message received (%d)", ntohl(mbuf.instruction));
 
         instuction = ntohl(mbuf.instruction);
         if (instuction == CMD_SERVER_BROADCAST) {
@@ -146,7 +146,7 @@ void *chat_thread_fn(void *arg)
         }
     }
  
-    DEBUG_DISPLAY(mywin, "chat thread terminates..");
+    //DEBUG_DISPLAY(mywin, "chat thread terminates..");
     pthread_detach(pthread_self());
     pthread_exit(NULL);
 }
@@ -294,11 +294,11 @@ int main(int argc, char *argv[])
 
                 /****** get the server info **************************/
                 input_server_name = strtok(parameter, " ");
-                DEBUG_DISPLAY(msg_window, "input_server_name %s", input_server_name);
+                //DEBUG_DISPLAY(msg_window, "input_server_name %s", input_server_name);
                 strcpy(server_name, input_server_name);
                 
                 input_port = strtok(NULL, " ");
-                DEBUG_DISPLAY(msg_window, "input_port %s", input_port);
+               // DEBUG_DISPLAY(msg_window, "input_port %s", input_port);
                 if (input_port == NULL) {
                     DISPLAY(cmd_window, "port number is missed");
                     continue;
